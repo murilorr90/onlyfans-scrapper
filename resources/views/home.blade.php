@@ -73,14 +73,11 @@
         const res = await fetch(`api/scrape?q=${username}`);
         const scrapeResponse = await res.json();
 
-        console.log(scrapeResponse);
-        // fetch('/api/scrape', {
-        //     method: 'GET',
-        //     headers: { 'Content-Type': 'application/json' },
-        //     body: JSON.stringify({ username })
-        // })
-        //     .then(res => res.json())
-        //     .then(data => alert(data.message));
+
+        if (typeof scrapeResponse.message !== 'undefined') {
+            alert(scrapeResponse.message);
+            search.value = '';
+        }
     });
 
     async function loadProfile(username) {
