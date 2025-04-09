@@ -29,13 +29,18 @@ php artisan migrate
 php artisan horizon
 ```
 
-5. **Run Scout indexing**
+5. **Install Chrome driver from dusk**
+```bash
+php artisan dusk:install
+php artisan dusk:chrome-driver --detect
+```
+6. **Run Scout indexing**
 
 ```bash
 php artisan scout:import App\\Models\\Profile
 ```
 
-6. **Serve the app**
+7. **Serve the app**
 
 ```bash
 php artisan serve
